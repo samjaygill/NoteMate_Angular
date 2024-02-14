@@ -21,4 +21,8 @@ export class NoteDetailsComponent {
     this.notesService.add(form.value)
     this.router.navigateByUrl('/');
   }
+
+  cancel(){
+    this.router.navigateByUrl('/');
+  }
 }

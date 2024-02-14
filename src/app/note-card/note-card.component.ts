@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Renderer2, ViewChild, Inject, PLATFORM_ID, Input } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, Inject, PLATFORM_ID, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -8,7 +8,7 @@ import { Component, ElementRef, Renderer2, ViewChild, Inject, PLATFORM_ID, Input
   templateUrl: './note-card.component.html',
   styleUrl: './note-card.component.scss',
 })
-export class NoteCardComponent {
+export class NoteCardComponent implements OnInit{
   @Input() title: string='';
   @Input() body: string='';
 
