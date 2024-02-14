@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Renderer2, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, Inject, PLATFORM_ID, Input } from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -9,6 +9,9 @@ import { Component, ElementRef, Renderer2, ViewChild, Inject, PLATFORM_ID } from
   styleUrl: './note-card.component.scss',
 })
 export class NoteCardComponent {
+  @Input() title: string='';
+  @Input() body: string='';
+
   @ViewChild('truncator', { static: true }) truncator!: ElementRef<HTMLElement>;
   @ViewChild('bodyText', { static: true }) bodyText!: ElementRef<HTMLElement>;
 
