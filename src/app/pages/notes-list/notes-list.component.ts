@@ -14,12 +14,17 @@ import { NgFor } from '@angular/common';
 })
 export class NotesListComponent {
 
+
   notes: Note[] = new Array<Note>();
 
   constructor(private notesService: NotesService){}
 
   ngOnInit(){
     this.notes = this.notesService.getAll();
+  }
+
+  deleteNote(id: number){
+    this.notesService.delete(id);
   }
 
 }
